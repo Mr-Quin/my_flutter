@@ -8,7 +8,7 @@ class SideBar extends StatefulWidget {
 }
 
 class _SideBarState extends State<SideBar> {
-  String _selected = '';
+  String _selected = 'My Imports';
 
   Widget _makeTile(String title, IconData icon) {
     bool isSelected = title == _selected;
@@ -20,24 +20,10 @@ class _SideBarState extends State<SideBar> {
       title: Text(title, style: style),
       onTap: () {
         setState(() {
-          if (isSelected) {
-            _selected = '';
-          } else {
-            _selected = title;
-          }
+          _selected = title;
         });
       },
     );
-  }
-
-  void _handleTap(String title) {
-    setState(() {
-      if (title == _selected) {
-        _selected = '';
-      } else {
-        _selected = title;
-      }
-    });
   }
 
   @override
